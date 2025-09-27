@@ -1,0 +1,29 @@
+{
+  "candidate": "OpenGVLab/InternVL3_5-1B",
+  "judges": [
+    "OpenGVLab/InternVL3_5-1B",
+    "OpenGVLab/InternVL3_5-2B"
+  ],
+  "mode": "judge",
+  "selected_judge": null,
+  "verbose": true,
+  "input_file": "output/output_candidate_mqa_safety_30.json",
+  "output_file": "output/output_judge_mqa_safety_30.json",
+  "judge_options": {
+    "device": "cpu",
+    "use_8bit": false,
+    "use_flash_attn": false,
+    "generation_config": {
+      "max_new_tokens": 256,
+      "num_beams": 2,
+      "temperature": 0.1, 
+      "top_p": 0.9,
+      "pad_token_id": 151645
+    }
+  },
+  "_notes": {
+    "candidate_options": "device can be 'cuda' or 'cuda:0' to run on GPU or 'cpu' to force CPU; use_8bit=true attempts 8-bit quantization; use_flash_attn toggles flash attention",
+    "judge_options": "per-judge device settings; set device to 'cpu' if you want judges to run on CPU",
+    "general": "mode: {candidate, judge, sequential, concurrent}. Set selected_judge to a judge id or index to run a single judge when mode=='judge'"
+  }
+}
