@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafAI - Intelligent Communication Guardian</title>
+    <meta name="description" content="SafAI is an AI-powered observability platform that monitors workplace communications for offensive content and provides intelligent responses.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="theme-toggle">
+        <button id="theme-toggle-btn" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <span class="logo-text">SafAI</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#docs">Documentation</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="cta-button primary">Start Free Trial</button>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-background">
+                <div class="gradient-orb orb-1"></div>
+                <div class="gradient-orb orb-2"></div>
+                <div class="gradient-orb orb-3"></div>
+            </div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Intelligent Communication Guardian
+                        <span class="gradient-text">Powered by AI</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Advanced AI monitoring for workplace communications. Detect offensive content,
+                        generate intelligent responses, and maintain a safe digital workplace environment.
+                    </p>
+                    <div class="hero-cta">
+                        <button class="cta-button primary large">Get Started</button>
+                        <button class="cta-button secondary large">Request Demo</button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">99.9%</span>
+                            <span class="stat-label">Detection Accuracy</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Real-time Monitoring</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">50K+</span>
+                            <span class="stat-label">Messages Processed Daily</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="dashboard-preview">
+                        <div class="ai-monitor-animation">
+                            <div class="monitor-pulse"></div>
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="dashboard-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Real-time Communication Monitoring</h2>
+                    <p>See how SafAI monitors your workplace communications in real-time</p>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="dashboard-card email-monitoring">
+                        <div class="card-header">
+                            <div class="card-title">
+                                <i class="fas fa-envelope"></i>
+                                <h3>Email Accounts Being Monitored</h3>
+                            </div>
+                            <div class="card-status">
+                                <span class="status-indicator inactive" id="email-status-indicator"></span>
+                                <span id="email-status-text">0 Active</span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="email-accounts" id="email-accounts-list">
+                                <div class="no-accounts" id="no-accounts-message">
+                                    <i class="fas fa-inbox" style="font-size: 3em; color: var(--text-secondary); margin-bottom: 15px;"></i>
+                                    <p style="color: var(--text-secondary); margin-bottom: 20px;">No email accounts connected yet</p>
+                                    <p style="color: var(--text-tertiary); font-size: 0.9em;">Add your first Gmail account to start monitoring</p>
+                                </div>
+                            </div>
+                            <div class="account-controls">
+                                <button class="add-account-btn">
+                                    <i class="fas fa-plus"></i>
+                                    Add Email Account
+                                </button>
+                                <button class="view-dashboard-btn" onclick="window.location.href='dashboard.html'">
+                                    <i class="fas fa-eye"></i>
+                                    View Dashboard
+                                </button>
+                            </div>
+                            <div class="card-metrics" id="email-metrics">
+                                <span>No accounts monitored yet</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card slack-monitoring">
+                        <div class="card-header">
+                            <div class="card-title">
+                                <i class="fab fa-slack"></i>
+                                <h3>Slack Channels Being Monitored</h3>
+                            </div>
+                            <div class="card-status">
+                                <span class="status-indicator active"></span>
+                                <span>24 Channels</span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="slack-channels">
+                                <div class="channel-item">
+                                    <div class="channel-info">
+                                        <span class="channel-hash">#</span>
+                                        <span>general</span>
+                                        <span class="member-count">156 members</span>
+                                    </div>
+                                    <div class="activity-indicator high"></div>
+                                </div>
+                                <div class="channel-item">
+                                    <div class="channel-info">
+                                        <span class="channel-hash">#</span>
+                                        <span>development</span>
+                                        <span class="member-count">24 members</span>
+                                    </div>
+                                    <div class="activity-indicator medium"></div>
+                                </div>
+                                <div class="channel-item">
+                                    <div class="channel-info">
+                                        <span class="channel-hash">#</span>
+                                        <span>marketing</span>
+                                        <span class="member-count">18 members</span>
+                                    </div>
+                                    <div class="activity-indicator low"></div>
+                                </div>
+                            </div>
+                            <button class="add-channel-btn">
+                                <i class="fas fa-plus"></i>
+                                Add Slack Channel
+                            </button>
+                            <div class="card-metrics">
+                                <span>8 workspaces, 24 channels monitored</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features" id="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Advanced AI-Powered Features</h2>
+                    <p>Comprehensive workplace communication monitoring with cutting-edge AI technology</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>Real-time Detection</h3>
+                        <p>Advanced NLP and sentiment analysis to detect offensive content as it happens</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>AI Response Generation</h3>
+                        <p>Intelligent automated responses with detailed explanations of policy violations</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <h3>Synthetic Visualizations</h3>
+                        <p>Generate annotated images and visualizations to explain communication offenses</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Advanced Analytics</h3>
+                        <p>Comprehensive reporting and insights into workplace communication patterns</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <h3>Seamless Integration</h3>
+                        <p>Easy integration with existing email systems and Slack workspaces</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-check"></i>
+                        </div>
+                        <h3>Compliance & Audit</h3>
+                        <p>Enterprise-grade security with complete audit trails and compliance reporting</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tech-stack">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Powered by Cutting-Edge Technology</h2>
+                    <p>Built on advanced AI and machine learning technologies</p>
+                </div>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <i class="fas fa-robot"></i>
+                        <span>Advanced NLP</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-eye"></i>
+                        <span>Computer Vision</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-magic"></i>
+                        <span>Generative AI</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-bolt"></i>
+                        <span>Real-time Processing</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-lock"></i>
+                        <span>Enterprise Security</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="social-proof">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Trusted by Leading Organizations</h2>
+                </div>
+                <div class="testimonials">
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"SafAI has transformed our workplace communication monitoring. The AI-powered detection is incredibly accurate and the automated responses save us hours of manual review."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">JS</div>
+                            <div class="author-info">
+                                <strong>Jennifer Smith</strong>
+                                <span>HR Director, TechCorp</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"The real-time monitoring and intelligent explanations have helped us maintain a much safer and more inclusive workplace environment."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">MJ</div>
+                            <div class="author-info">
+                                <strong>Michael Johnson</strong>
+                                <span>Compliance Officer, GlobalCorp</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <strong>500+</strong>
+                        <span>Companies Trust SafAI</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong>10M+</strong>
+                        <span>Messages Monitored</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong>99.9%</strong>
+                        <span>Uptime Guarantee</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Transform Your Workplace Communication?</h2>
+                    <p>Start monitoring with AI-powered intelligence in minutes</p>
+                    <div class="cta-buttons">
+                        <button class="cta-button primary large">Start Free Trial</button>
+                        <button class="cta-button secondary large">Contact Sales</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <span class="logo-text">SafAI</span>
+                    </div>
+                    <p>Intelligent Communication Guardian for the modern workplace</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#docs">Documentation</a></li>
+                        <li><a href="#">API</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Security</a></li>
+                        <li><a href="#">Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SafAI. All rights reserved.</p>
+                <div class="certifications">
+                    <span class="cert-badge">SOC 2 Compliant</span>
+                    <span class="cert-badge">GDPR Ready</span>
+                    <span class="cert-badge">ISO 27001</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="gmail-oauth.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
